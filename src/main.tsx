@@ -46,12 +46,17 @@ class App extends Component {
       items: getItems(10),
       secondList: false,
     };
+    // Bind the eventHandler method to the class instance
+    this.eventHandler = this.eventHandler.bind(this);
     this.onDragEnd = this.onDragEnd.bind(this);
   }
 
   eventHandler(e) {
     console.log(e.key);
-    if (e.key == 'Control') this.state.secondList = true;
+    if (e.key === 'Control') {
+      // Safely update the state
+      this.setState({ secondList: true });
+    }
   }
 
   componentDidMount() {
@@ -59,6 +64,7 @@ class App extends Component {
   }
 
   componentWillUnmount() {
+    // Remove the event listener with the same bound function
     window.removeEventListener('keydown', this.eventHandler);
   }
 
@@ -79,8 +85,6 @@ class App extends Component {
     });
   }
 
-  // Normally you would want to split things out into separate components.
-  // But in this example everything is just done in one place for simplicity
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
