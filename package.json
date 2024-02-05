@@ -9,8 +9,15 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-table": "7.0.4"
+    "react-table": "7.0.4",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.0",
+    "@mui/material": "^5.14.0",
+    "react-data-table-component": "^7.5.3",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7",
+    "react-beautiful-dnd": "13.0.0"
   },
   "devDependencies": {
     "@nabla/vite-plugin-eslint": "1.5.0",
